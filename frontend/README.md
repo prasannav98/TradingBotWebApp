@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Trading Bot Web Interface
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides a web interface for a trading bot, allowing users to fetch stock data, train a model, get predictions, and simulate trading.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* **Data Fetching:** Fetch historical stock data for a specified symbol and date range.
+* **Model Training:** Train a prediction model using the fetched data.
+* **Prediction Generation:** Generate trading predictions based on the trained model.
+* **Trading Simulation:** Simulate trading based on the generated predictions, tracking portfolio performance and transaction history.
+* **Interactive Chart:** Displays a chart of the stock's closing price.
+* **Limited Table Rows:** Displays a limited number of rows in tables to improve initial page load.
+* **Scrollable Tables:** Tables with scrollable content for easier viewing of large datasets.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Frontend:**
+    * React
+    * Axios (for API requests)
+    * react-apexcharts (for charting)
+* **Backend:**
+    * FastAPI (Python)
+    * (Your prediction model libraries, e.g., scikit-learn, TensorFlow, etc.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup
 
-### `npm test`
+1.  **Clone the repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    git clone <repository_url>
+    cd <repository_directory>
+    ```
 
-### `npm run build`
+2.  **Backend Setup:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    * Navigate to the backend directory.
+    * Create a virtual environment (recommended):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate  # On Linux/macOS
+        venv\Scripts\activate      # On Windows
+        ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    * Install dependencies:
 
-### `npm run eject`
+        ```bash
+        pip install -r requirements.txt
+        ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    * Run the FastAPI server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        ```bash
+        uvicorn main:app --reload
+        ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.  **Frontend Setup:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    * Navigate to the frontend directory.
+    * Install dependencies:
 
-## Learn More
+        ```bash
+        npm install
+        ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    * Start the React development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        ```bash
+        npm start
+        ```
 
-### Code Splitting
+4.  **Configuration:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    * Ensure the frontend is configured to connect to the correct backend API endpoint (usually `http://localhost:8000`).
+    * Adjust the prediction model and data fetching logic in the backend as needed.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1.  Open the web interface in your browser (usually `http://localhost:3000`).
+2.  Enter the stock symbol, start date, and end date.
+3.  Click "Fetch Data" to retrieve historical stock data.
+4.  Click "Train Model" to train the prediction model.
+5.  Click "Get Predictions" to generate trading predictions.
+6.  View the data, predictions, portfolio, and transaction history.
 
-### Making a Progressive Web App
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Replace `<repository_url>` and `<repository_directory>` with your actual repository information.
+* Ensure your backend API is running before starting the frontend.
+* Adjust the prediction model and trading simulation logic to match your specific requirements.
+* Install the necessary python libraries that your backend code requires.
