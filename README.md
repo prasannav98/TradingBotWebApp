@@ -22,7 +22,7 @@ This project provides a web interface for a trading bot, allowing users to fetch
     * react-apexcharts (for charting)
 * **Backend:**
     * FastAPI (Python)
-    * (Your prediction model libraries, e.g., scikit-learn, TensorFlow, etc.)
+    * Deep Q Learning
 
 ## Setup
 
