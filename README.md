@@ -8,6 +8,8 @@ This project provides a web interface for a trading bot, allowing users to fetch
 * **Model Training:** Train a prediction model using the fetched data.
 * **Prediction Generation:** Generate trading predictions based on the trained model.
 * **Trading Simulation:** Simulate trading based on the generated predictions, tracking portfolio performance and transaction history.
+
+## To Do
 * **Interactive Chart:** Displays a chart of the stock's closing price.
 * **Limited Table Rows:** Displays a limited number of rows in tables to improve initial page load.
 * **Scrollable Tables:** Tables with scrollable content for easier viewing of large datasets.
